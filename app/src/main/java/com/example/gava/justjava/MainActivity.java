@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
     }
     /*This metod change increment*/
     public void increment(View view) {
-        numberOfCoffees = numberOfCoffees +1;
+        numberOfCoffees++;
         display(numberOfCoffees);
     }
     /*This metod change decrement*/
     public void decrement(View view) {
-        numberOfCoffees = numberOfCoffees - 1;
+        if (numberOfCoffees > 0) numberOfCoffees--;
         display(numberOfCoffees);
     }
     /**
