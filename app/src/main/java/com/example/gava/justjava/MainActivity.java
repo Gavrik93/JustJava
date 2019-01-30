@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
      */
     int numberOfCoffees = 0;
     public void submitOrder(View view) {
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees*10);
+        String priceMessage = "You owe "+ (numberOfCoffees*7) + "bucks, dude" + "\n Thank you! ";
+        displayMessage(priceMessage);
+//        display(numberOfCoffees);
+//        displayPrice(numberOfCoffees*10);
     }
     /*This metod change increment*/
     public void increment(View view) {
@@ -72,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
