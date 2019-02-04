@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void submitOrder(View view) {
-        String priceMessage = "You owe "+ (numberOfCoffees*coffeePrice) + "bucks, dude" + "\n Thank you! ";
+        String priceMessage = "You owe "+ (numberOfCoffees*coffeePrice) + " bucks, dude" + "\n Thank you! ";
         displayMessage(priceMessage);
 //        display(numberOfCoffees);
 //        displayPrice(numberOfCoffees*10);
