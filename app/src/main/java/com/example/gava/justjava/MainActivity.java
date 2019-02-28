@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         String priceMessage = "You owe "+ (numberOfCoffees*coffeePrice) + " bucks, dude" + "\n Thank you! ";
         displayMessage(priceMessage);
-//        display(numberOfCoffees);
+//        displayQuanity(numberOfCoffees);
 //        displayPrice(numberOfCoffees*10);
     }
 
@@ -76,18 +76,18 @@ public class MainActivity extends AppCompatActivity {
     /*This metod change increment*/
     public void increment(View view) {
         numberOfCoffees++;
-        display(numberOfCoffees);
+        displayQuanity(numberOfCoffees);
     }
     /*This metod change decrement*/
     public void decrement(View view) {
         if (numberOfCoffees > 0) numberOfCoffees--;
-        display(numberOfCoffees);
+        displayQuanity(numberOfCoffees);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuanity(int number) {
         TextView quantityTextView = findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
