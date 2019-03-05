@@ -61,27 +61,42 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    int numberOfCoffees = 0;
+    int quantity = 0;
 
 
     public void submitOrder(View view) {
-        String priceMessage = "You owe "+ (numberOfCoffees*coffeePrice) + " bucks, dude" + "\n Thank you! ";
+        int price = calculatePrice();
+        String priceMessage = "You owe "+ price + " bucks, dude" + "\n Thank you! ";
         displayMessage(priceMessage);
 
+
+
+        //displayPrice(price);
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     *
+     */
+    private  int calculatePrice() {
+        int price = quantity * 5;
+        return price;
     }
 
 
 
     /*This metod change increment*/
     public void increment(View view) {
-        numberOfCoffees++;
-        displayQuanity(numberOfCoffees);
+        quantity++;
+        displayQuanity(quantity);
     }
     /*This metod change decrement*/
     public void decrement(View view) {
-        if (numberOfCoffees > 0) numberOfCoffees--;
-        displayQuanity(numberOfCoffees);
+        if (quantity > 0) quantity--;
+        displayQuanity(quantity);
     }
+
 
     /**
      * This method displays the given quantity value on the screen.
