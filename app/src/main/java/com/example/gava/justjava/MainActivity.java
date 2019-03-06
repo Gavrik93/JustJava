@@ -66,12 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = "You owe "+ price + " bucks, dude" + "\n Thank you! ";
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
 
-
-
-        //displayPrice(price);
     }
 
     /**
@@ -84,7 +81,18 @@ public class MainActivity extends AppCompatActivity {
         return price;
     }
 
+    /**
+     * Create summary of the order
+     * @param price of the order
+     * @return  text summary of the order
+     */
 
+    private String createOrderSummary(int price){
+        String priceMessage = "Name: Say My Name";
+        priceMessage = priceMessage + "\nQuantity: " + quantity;
+        priceMessage = priceMessage + "\nYou owe "+ price + " bucks, dude" + "\n Thank you! ";
+        return priceMessage;
+    }
 
     /*This metod change increment*/
     public void increment(View view) {
