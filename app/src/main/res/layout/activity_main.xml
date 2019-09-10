@@ -6,21 +6,13 @@
     android:layout_height="match_parent"
     tools:context="MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="53dp"
-        android:layout_marginTop="8dp"
-        android:padding="16dp"
-        android:text="QUANTITY"
-        android:textColor="@android:color/darker_gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView">
@@ -30,6 +22,12 @@
             android:layout_height="48dp"
             android:onClick="decrement"
             android:text="-" />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment"
+            android:text="+" />
 
         <TextView
             android:id="@+id/quantity_text_view"
@@ -42,32 +40,28 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:onClick="increment"
-            android:text="+" />
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/order_botton_view"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:onClick="submitOrder"
-        android:text="ORDER"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:padding="16dp"
+        android:text="QUANTITY"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="260dp"
         android:text="ORDER SUMMARY"
+        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,32 +69,45 @@
         android:id="@+id/order_summary_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:text="$0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <EditText
-        android:id="@+id/coffeePrice"
-        android:layout_width="141dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="104dp"
-        android:ems="10"
-        android:hint="Price of coffee"
-        android:inputType="number|text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/priceButton"
+        android:id="@+id/order_botton_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Submit"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="384dp"
+        android:onClick="submitOrder"
+        android:text="ORDER"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    // add change price of coffee
+     <EditText
+         android:id="@+id/coffeePrice"
+         android:layout_width="141dp"
+         android:layout_height="47dp"
+         android:layout_marginTop="8dp"
+         android:layout_marginEnd="104dp"
+         android:ems="10"
+         android:hint="Price of coffee"
+         android:inputType="number|text"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+     <Button
+         android:id="@+id/priceButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         android:layout_marginEnd="16dp"
+         android:text="Submit"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,18 +1,4 @@
-/*
-package com.example.gava.justjava;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
-*/
 /**
  * IMPORTANT: Make sure you are using the correct package name.
  * This example uses the package name:
@@ -110,16 +96,13 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void displayQuanity(int number) {
-        TextView quantityTextView = findViewById(R.id.quantity_text_view);
+        TextView quantityTextView =  findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
-//    /**
-//     * This method displays the given price on the screen.
-//     */
-//    private void displayPrice(int number) {
-//        TextView priceTextView = findViewById(R.id.price_text_view);
-//        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-//    }
+
+    /**
+     * This method displays order summary text on screen.
+     */
 
     private void displayMessage(String message) {
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
