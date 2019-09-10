@@ -22,8 +22,14 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
     // Add Button action in app, Button will save coffeePrice
-    Button priceButton;
+    /*Button priceButton;
     int coffeePrice;
 
     EditText coffeePriceInput;
@@ -42,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 coffeePrice = Integer.valueOf(coffeePriceInput.getText().toString());
             }
         });
-    }
+    }*/
 
     /**
      * This method is called when the order button is clicked.
