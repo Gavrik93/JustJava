@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -80,7 +81,13 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private String createOrderSummary(int price){
+        //Checkbox logic we watch boolean parameter
+        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+
+
         String priceMessage = "Name: Say My Name";
+        priceMessage = priceMessage + "\nWhipped cream " + hasWhippedCream;
         priceMessage = priceMessage + "\nQuantity: " + quantity;
         priceMessage = priceMessage + "\nYou owe "+ price + " bucks, dude" + "\n Thank you! ";
         return priceMessage;
