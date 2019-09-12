@@ -1,56 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="MainActivity">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="MainActivity">
 
-        <TextView
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:ems="50"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/order_botton_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:textSize="16sp"
-            android:textAllCaps="true"
-            android:text="Toppings"
+            android:layout_marginTop="150dp"
+            android:onClick="submitOrder"
+            android:text="ORDER"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <CheckBox
             android:id="@+id/whipped_cream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="16dp"
             android:paddingLeft="24dp"
             android:text="Whipped cream"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <TextView
-            android:id="@+id/textView"
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
             android:layout_width="wrap_content"
-            android:layout_height="53dp"
-            android:layout_marginTop="96dp"
-            android:padding="16dp"
-            android:text="QUANTITY"
-            android:textColor="@android:color/darker_gray"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="Chocolate"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/whipped_cream" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <Button
                 android:layout_width="48dp"
@@ -78,6 +88,18 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:padding="16dp"
+            android:text="Toppings"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/order_summary_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,50 +109,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <Button
-            android:id="@+id/order_botton_view"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="384dp"
-            android:onClick="submitOrder"
-            android:text="ORDER"
+            android:layout_height="53dp"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:text="QUANTITY"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/chocolate_checkbox" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="16dp"
             android:text="ORDER SUMMARY"
             android:textAllCaps="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-
-        // add change price of coffee
-        <!-- <EditText
-             android:id="@+id/coffeePrice"
-             android:layout_width="141dp"
-             android:layout_height="47dp"
-             android:layout_marginTop="8dp"
-             android:layout_marginEnd="104dp"
-             android:ems="10"
-             android:hint="Price of coffee"
-             android:inputType="number|text"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintTop_toTopOf="parent" />
-
-         <Button
-             android:id="@+id/priceButton"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="8dp"
-             android:layout_marginEnd="16dp"
-             android:text="Submit"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintTop_toTopOf="parent" />-->
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
