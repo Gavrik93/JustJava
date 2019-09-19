@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
      */
     int quantity = 0;
 
-    // processing button Order
+    // processing button Order Using Email
     public void submitOrder(View view) {
         EditText nameField = findViewById(R.id.nameField);
         String name = nameField.getText().toString();
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, name);
         displayMessage(priceMessage);
 
+
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order coffee " + name);
@@ -53,6 +54,25 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+    //processing button Order In App
+
+    public void submitOrderInApp (View view){
+        EditText nameField = findViewById(R.id.nameField);
+        String name = nameField.getText().toString();
+
+        //Checkbox logic @whipped_cream
+        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+
+        //Checkbox logic @chocolate_checkbox
+        CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate = chocolateCheckBox.isChecked();
+
+
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, name);
+        displayMessage(priceMessage);
     }
 
     /**
@@ -84,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate, String name) {
 
 
-        String priceMessage = getString(R.string.name, name);
-        priceMessage = priceMessage + "\n" + getString(R.string.whipped_cream) + hasWhippedCream;
-        priceMessage = priceMessage + "\n" + getString(R.string.chocolate) + hasChocolate;
-        priceMessage = priceMessage + "\n" + getString(R.string.quantity) + quantity;
-        priceMessage = priceMessage + "\nYou own me" + price + " bucks, dude" + "\n Thank you! ";
+        String priceMessage = getString(R.string.order_summary_name, name);
+        priceMessage = priceMessage + "\n" + getString(R.string.order_summary_whipped_cream, hasWhippedCream);
+        priceMessage = priceMessage + "\n" + getString(R.string.order_summary_chocolate, hasChocolate);
+        priceMessage = priceMessage + "\n" + getString(R.string.order_summary_quantity, quantity);
+        priceMessage = priceMessage + "\nYou own me " + price + " bucks, dude" + "\nThank you! ";
         return priceMessage;
     }
 
@@ -105,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*This metod change decrement*/
     public void decrement(View view) {
-        if (quantity >= 0) {
+        if (quantity == 0) {
             Toast.makeText(this, "You cannot have less then 0 cup of coffee",Toast.LENGTH_SHORT).show();
             return;
         }
